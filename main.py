@@ -4,7 +4,7 @@ import logging
 
 root = os.environ.get("ROOT", "/home/piku/webdav")
 
-os.makedirs(root, 0755)
+os.makedirs(root, 0o755)
 
 logging.basicConfig(level=logging.DEBUG)
 
