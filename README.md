@@ -1,4 +1,4 @@
-Deploy a webdav server with Piku.
+With this application you can deploy a simple webdav server with [Piku](https://github.com/rcarmo/piku).
 
 Tested successfully with [Joplin](https://github.com/laurent22/joplin).
 
