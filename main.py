@@ -2,6 +2,10 @@ import os
 from wsgidav.wsgidav_app import WsgiDAVApp
 import logging
 
+root = os.environ.get("ROOT", "/home/piku/webdav")
+
+os.makedirs(root, 0755)
+
 logging.basicConfig(level=logging.DEBUG)
 
 logger = logging.getLogger("wsgidav")
