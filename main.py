@@ -4,7 +4,10 @@ import logging
 
 root = os.environ.get("ROOT", "/home/piku/webdav")
 
-os.makedirs(root, 0o755)
+try:
+    os.makedirs(root, 0o755)
+except FileExistsError:
+    pass
 
 logging.basicConfig(level=logging.DEBUG)
 
