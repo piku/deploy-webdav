@@ -21,7 +21,7 @@ passwords = {p.split(":")[0]: {"password": p.split(":")[1]} for p in os.environ.
 
 config = {
     "provider_mapping": {
-      "/": "/home/piku/webdav/",
+      "/dav": "/home/piku/webdav/",
     },
     "verbose": 1,
     "http_authenticator": {
