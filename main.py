@@ -2,10 +2,6 @@ import os
 from wsgidav.wsgidav_app import WsgiDAVApp
 import logging
 
-os.environ["SCRIPT_NAME"] = ""
-
-root = os.environ.get("ROOT", "/home/piku/webdav")
-
 try:
     os.makedirs(root, 0o755)
 except FileExistsError:
@@ -17,12 +13,12 @@ logger = logging.getLogger("wsgidav")
 logger.propagate = True
 logger.setLevel(logging.DEBUG)
 
-passwords = {p.split(":")[0]: {"password": p.split(":")[1]} for p in os.environ.get("PASSWORDS").split(" ")}
+passwords = os.environ.get("PASSWORDS", "")
+passwords = {p.split(":")[0]: {"password": p.split(":")[1]} for p in passwords.split(" ")} if passwords else {}
+folders = {p.split(":")[0]: {"password": p.split(":")[1]} for p in os.environ.get("FOLDERS", "/webdav:/home/piku/webdav").split(" ")}
 
 config = {
-    "provider_mapping": {
-      "/": "/home/piku/webdav/",
-    },
+    "provider_mapping": folders,
     "verbose": 1,
     "http_authenticator": {
         "domain_controller": None,
