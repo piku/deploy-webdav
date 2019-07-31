@@ -10,7 +10,7 @@ logger.setLevel(logging.DEBUG)
 
 passwords = os.environ.get("PASSWORDS", "")
 passwords = {p.split(":")[0]: {"password": p.split(":")[1]} for p in passwords.split(" ")} if passwords else {}
-folders = {p.split(":")[0]: {"password": p.split(":")[1]} for p in os.environ.get("FOLDERS", "/webdav:/home/piku/webdav").split(" ")}
+folders = {p.split(":")[0]: p.split(":")[1] for p in os.environ.get("FOLDERS", "/webdav:/home/piku/webdav").split(" ")}
 
 for f in folders:
     try:
