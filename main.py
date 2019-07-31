@@ -2,6 +2,8 @@ import os
 from wsgidav.wsgidav_app import WsgiDAVApp
 import logging
 
+os.environ["SCRIPT_NAME"] = ""
+
 root = os.environ.get("ROOT", "/home/piku/webdav")
 
 try:
