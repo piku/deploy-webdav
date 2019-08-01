@@ -1,6 +1,4 @@
-With this application you can deploy a simple webdav server with [Piku](https://github.com/rcarmo/piku).
-
-Tested successfully with [Joplin](https://github.com/laurent22/joplin).
+With this application you can deploy a simple password-protected webdav server using [Piku](https://github.com/rcarmo/piku).
 
 ```
 git remote add piku piku@yourserver.net:webdav
@@ -12,3 +10,4 @@ piku config:set NGINX_SERVER_NAME=somedomain.net PASSWORDS="username:password us
  * `PASSWORDS` is a list of space separated `username:password` pairs.
  * `FOLDERS` is a list of `/URL:/FOLDER` mappings, defaulting to `/webdav:/home/piku/webdav`.
 
+This app has been successfully tested with [Joplin](https://github.com/laurent22/joplin) sync.
