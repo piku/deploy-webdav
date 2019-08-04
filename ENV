@@ -1,1 +1,1 @@
-SCRIPT_NAME=
+NGINX_INCLUDE_FILE=nginx-custom.conf
