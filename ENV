@@ -1,1 +1,2 @@
 NGINX_INCLUDE_FILE=nginx-custom.conf
+UWSGI_INCLUDE_FILE=uwsgi.conf
